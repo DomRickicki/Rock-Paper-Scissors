@@ -22,8 +22,9 @@
 
         function round () { 
             let computerSelection = getComputerChoice()
-            let playerSelection = prompt("rock, paper, or scissors??", 
+            let typedSelection = prompt("rock, paper, or scissors??", 
             "choice")
+            let playerSelection = typedSelection.toLowerCase();
 
             if (computerSelection === playerSelection) {
                 return alert("it's a tie!")
@@ -46,7 +47,7 @@
         }
 
         console.log(round())
-        
+    
         
 
         
