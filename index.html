@@ -22,10 +22,31 @@
 
         function round () { 
             let computerSelection = getComputerChoice()
-            let playerSelection = 
+            let playerSelection = prompt("rock, paper, or scissors??", 
+            "choice")
+
+            if (computerSelection === playerSelection) {
+                return alert("it's a tie!")
+            } else if ((computerSelection === rock && playerSelection === scissors) ||
+                      (computerSelection === scissor && playerSelection === paper) ||
+                      (computerSelection === paper && playerSelection === rock)) {
+                return alert("you lose" + " " + computerSelection + " " +
+                "beats" + " " + playerSelection) 
+            } else if ((computerSelection === rock && playerSelection === paper) ||
+                      (computerSelection === scissor && playerSelection === rock) ||
+                      (computerSelection === paper && playerSelection === scissors)) {
+                        return alert("you win!" + " " + playerSelection + " " + "beats"
+                        + " " + computerSelection)
+                      } else {
+                        return alert("NOT A VALID ANSWER!")
+                      }
+                    
+            
 
         }
 
+        console.log(round())
+        
         
 
         
