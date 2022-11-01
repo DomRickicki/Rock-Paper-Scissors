@@ -18,9 +18,10 @@
             return choice[Math.floor(Math.random() * choice.length)]
         }
 
-        
+        let playerScore = 0
+        let computerScore = 0
 
-        function round () { 
+        function playRound () { 
             let computerSelection = getComputerChoice()
             let typedSelection = prompt("rock, paper, or scissors??", 
             "choice")
@@ -31,22 +32,42 @@
             } else if ((computerSelection === "rock" && playerSelection === "scissors") ||
                       (computerSelection === "scissors" && playerSelection === "paper") ||
                       (computerSelection === "paper" && playerSelection === "rock")) {
-                return alert("you lose" + " " + computerSelection + " " +
-                "beats" + " " + playerSelection) 
+                        computerScore ++;
+                        return alert("you lose" + " " + computerSelection + " " +
+                "beats" + " " + playerSelection + " " + "player =" + " " + playerScore + " " +
+                        "computer =" + " " + computerScore) 
             } else if ((computerSelection === "rock" && playerSelection === "paper") ||
                       (computerSelection === "scissors" && playerSelection === "rock") ||
                       (computerSelection === "paper" && playerSelection === "scissors")) {
+                        playerScore ++;
                         return alert("you win!" + " " + playerSelection + " " + "beats"
-                        + " " + computerSelection)
+                        + " " + computerSelection + " " + "player =" + " " + playerScore + " " +
+                        "computer =" + " " + computerScore)
                       } else {
                         return alert("NOT A VALID ANSWER!")
                       }
-                    
-            
 
         }
 
-        console.log(round())
+        
+
+        function game() {
+            for (i=0; i <= 20; i++) {
+             gamePlay = playRound ();
+             if (playerScore === 3){
+                return alert ("Game Over, you win!")
+                break;
+            } else if (computerScore === 3){
+                return alert ("Game Over, computer wins!")
+                break;
+            }
+            }
+
+        }
+
+        console.log(game())
+
+       
     
         
 
